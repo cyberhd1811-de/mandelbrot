@@ -1,0 +1,10 @@
+.mandelbrot {
+    background-color: white;
+
+    &__min {
+        height: 350px;
+        width: 350px;
+        min-height: 350px;
+        min-width: 350px;
+    }
+}
