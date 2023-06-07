@@ -1,4 +1,4 @@
 [[headers]]
     for = "/*"
-    [header.values]
+    [headers.values]
         Content-Security-Policy = "default-src 'self"
