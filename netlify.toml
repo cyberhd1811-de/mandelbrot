@@ -1,0 +1,4 @@
+[[headers]]
+    for = "/*"
+    [header.values]
+        Content-Security-Policy = "default-src 'self";

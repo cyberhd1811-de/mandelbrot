@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="description" content="A simple view of the mandelbrot set." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
+        <base href="https://mandelbrot.cyberhd1811.de" target="_blank">
+        <link rel="manifest" href="/assets/manifest.json" />
         <link
             rel="shortcut icon"
-            type="image/ico"
-            href="/src/assets/favicon.ico"
+            type="image/x-icon"
+            href="/assets/img/favicon.ico"
         />
+        <meta charset="utf-8" />
+        <meta name="application-name" content="Mandelbrot" />
+        <meta name="author" content="CyberHD1811" />
+        <meta
+            name="description"
+            content="A simple viewer of the mandelbrot set."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#808080" />
+        <script src="/src/index.tsx" type="module"></script>
         <title>Mandelbrot Set</title>
     </head>
     <body>
         <noscript>The world has changed... Activate Javascript now!</noscript>
-        <script src="/src/index.tsx" type="module"></script>
         <div id="root"></div>
     </body>
 </html>

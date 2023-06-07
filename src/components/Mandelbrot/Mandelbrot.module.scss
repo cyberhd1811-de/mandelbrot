@@ -1,7 +1,11 @@
 .mandelbrot {
     background-color: white;
+    border: 1px solid black;
 
     &__min {
+        background-color: white;
+        border: 1px solid black;
+
         height: 350px;
         width: 350px;
         min-height: 350px;

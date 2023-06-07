@@ -15,7 +15,19 @@
 
     display: grid;
     align-items: center;
+    align-content: space-evenly;
     justify-content: center;
+    justify-items: center;
+
+    &__data {
+        height: 50px;
+        width: 220px;
+        align-self: center;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
 }
 
 .footer {
