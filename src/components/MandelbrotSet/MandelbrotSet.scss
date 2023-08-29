@@ -1,0 +1,8 @@
+@import '../../styles/variables.scss';
+
+#mandelbrot_set {
+    max-width: 500px;
+    max-height: 500px;
+
+    border: 2px solid $border_color;
+}

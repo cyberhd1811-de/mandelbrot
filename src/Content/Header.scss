@@ -1,0 +1,14 @@
+@import '../styles/variables.scss';
+
+#header {
+    height: $header_height;
+    width: $header_width;
+
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: $font_color;
+    font-size: 40px;
+}

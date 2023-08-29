@@ -1,4 +1,13 @@
-import DataTuple from './DataTuple';
-import Mandelbrot from './Mandelbrot';
+import Button from './Button';
+import Display from './Display';
+import MandelbrotButtonWrapper from './MandelbrotButtonWrapper';
+import MandelbrotDisplayWrapper from './MandelbrotDisplayWrapper';
+import MandelbrotSet from './MandelbrotSet';
 
-export { DataTuple, Mandelbrot };
+export {
+    Button,
+    Display,
+    MandelbrotButtonWrapper,
+    MandelbrotDisplayWrapper,
+    MandelbrotSet,
+};
