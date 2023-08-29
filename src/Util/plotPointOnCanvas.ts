@@ -1,5 +1,5 @@
 import { mandelbrotFunction } from '.';
-import { colors } from '../Components/MandelbrotSet';
+import { colors } from '../Component/MandelbrotSet';
 
 export default function (
     context: CanvasRenderingContext2D,
