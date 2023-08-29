@@ -4,7 +4,7 @@ import {
     MandelbrotButtonWrapper,
     MandelbrotDisplayWrapper,
     MandelbrotSet,
-} from '../Components';
+} from '../Component';
 import { MandelbrotProvider } from '../Context';
 
 import './Mandelbrot.scss';
