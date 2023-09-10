@@ -1,4 +1,4 @@
-import { type Component, createEffect, onMount } from 'solid-js';
+import { createEffect, type Component } from 'solid-js';
 
 import colors from './colors';
 import * as Functions from '../../Util';
@@ -6,21 +6,23 @@ import { useMandelbrot, useSettings } from '../../Context';
 
 import './MandelbrotSet.scss';
 
-const { isMobile, plotPointOnCanvas } = Functions;
+const { plotPointOnCanvas } = Functions;
 
 const MandelbrotSet: Component = function () {
     let canvas: HTMLCanvasElement;
 
     const [{}, { setMouseCoordinates, setPlannedOriginCoordinates }] =
         useMandelbrot();
-    const [{ size }] = useSettings();
-    const [height, width] = size();
+
+    const [{ canvasSize }] = useSettings();
+    let [height, width] = canvasSize();
 
     function handleMouseMove({ offsetX, offsetY }: MouseEvent) {
         setMouseCoordinates([offsetX, offsetY], [height, width]);
     }
 
     createEffect(function () {
+        [height, width] = canvasSize();
         const context = canvas.getContext('2d')!;
 
         for (let x = 0; x < width; x++) {
@@ -32,9 +34,9 @@ const MandelbrotSet: Component = function () {
 
     return (
         <canvas
-            height={height}
+            height={canvasSize()[0]}
             id='mandelbrot_set'
-            width={width}
+            width={canvasSize()[1]}
             ref={canvas!}
             onClick={() => {
                 setPlannedOriginCoordinates();

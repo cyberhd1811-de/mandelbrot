@@ -6,7 +6,6 @@ import {
     type Setter,
 } from 'solid-js';
 
-import { useSettings } from './settings';
 import { createSignalInStorage } from '../Hooks';
 import { calculateComplexNumber } from '../Util';
 
@@ -33,8 +32,6 @@ type MandelbrotContextType = [
 const MandelbrotContext = createContext<MandelbrotContextType>();
 
 export function MandelbrotProvider(props: { children: JSX.Element }) {
-    const [{ precisionMode }] = useSettings();
-
     const [mouseCoordinates, _setMouseCoordinates] = createSignalInStorage({
         defaultValue: [0, 0] as [number, number],
         key: 'mouseCoordinates',

@@ -1,33 +1,44 @@
 import {
-    type Accessor,
-    type Setter,
     createContext,
     createSignal,
     useContext,
+    type Accessor,
+    type Setter,
 } from 'solid-js';
+
 import { createSignalInStorage } from '../Hooks';
+import { convertToCanvasSize } from '../Util';
 
 export type PRECISIONMODES = 'NORMAL';
 
 type SettingsContextType = [
     {
+        canvasSize: Accessor<[number, number]>;
+        lastLocation: Accessor<string>;
         precisionMode: Accessor<PRECISIONMODES>;
         showZoom: Accessor<boolean>;
-        size: Accessor<[number, number]>;
     },
     {
+        setLastLocation: Setter<string>;
         setPrecisionMode: Setter<PRECISIONMODES>;
         setShowZoom: Setter<boolean>;
-        setSize: Setter<[number, number]>;
     }
 ];
 
 const SettingsContext = createContext<SettingsContextType>();
 
-export function SettingsProvider(props: any) {
+export function SettingsProvider(props: {
+    children: any;
+    screenSize: Accessor<[number, number]>;
+}) {
     const [showZoom, setShowZoom] = createSignalInStorage({
         defaultValue: false,
         key: 'showZoom',
+    });
+
+    const [lastLocation, setLastLocation] = createSignalInStorage<string>({
+        key: 'lastLocation',
+        defaultValue: '/',
     });
 
     const [precisionMode, setPrecisionMode] =
@@ -36,20 +47,25 @@ export function SettingsProvider(props: any) {
             key: 'precisionMode',
         });
 
-    const [size, setSize] = createSignal(
-        (props.canvasSize as [number, number]) || [0, 0]
+    const [canvasSize, _setCanvasSize] = createSignal<[number, number]>(
+        convertToCanvasSize(props.screenSize())
     );
+
+    window.onresize = function () {
+        _setCanvasSize(convertToCanvasSize(props.screenSize()));
+    };
 
     const store: SettingsContextType = [
         {
+            canvasSize,
+            lastLocation,
             precisionMode,
             showZoom,
-            size,
         },
         {
+            setLastLocation,
             setPrecisionMode,
             setShowZoom,
-            setSize,
         },
     ];
 

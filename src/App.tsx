@@ -1,17 +1,27 @@
-import { type Component } from 'solid-js';
+import { createEffect, createSignal, type Component } from 'solid-js';
 import { Route, Routes } from '@solidjs/router';
 
-import { Footer, Header, Mandelbrot, NotFound } from './Content';
+import { Footer, Header, Mandelbrot, NotFound, Settings } from './Content';
 import { SettingsProvider } from './Context';
-import { isMobile } from './Util';
 
 const App: Component = () => {
+    const [screenSize, setScreenSize] = createSignal<[number, number]>([
+        window.innerHeight,
+        window.innerWidth,
+    ]);
+
+    createEffect(function () {
+        window.addEventListener('resize', function () {
+            setScreenSize([window.innerHeight, window.innerWidth]);
+        });
+    });
 
     return (
-        <SettingsProvider canvasSize={isMobile() ? [350, 350] : [500, 500]}>
+        <SettingsProvider screenSize={screenSize}>
             <Header />
             <Routes>
                 <Route path='/' component={Mandelbrot} />
+                <Route path='/settings' component={Settings} />
                 <Route path='*' component={NotFound} />
             </Routes>
             <Footer />

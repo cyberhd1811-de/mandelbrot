@@ -4,7 +4,8 @@ import { Button } from '..';
 import { useMandelbrot } from '../../Context';
 
 const MandelbrotButtonWrapper: Component = function () {
-    const [, { resetOrigin, resetZoom, setOriginCoordinates, setZoomFactor }] = useMandelbrot();
+    const [, { resetOrigin, resetZoom, setOriginCoordinates, setZoomFactor }] =
+        useMandelbrot();
 
     function zoomIn() {
         setZoomFactor((prev) => prev * 2);
