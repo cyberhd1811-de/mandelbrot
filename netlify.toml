@@ -1,4 +1,4 @@
 [[headers]]
     for = "/*"
     [headers.values]
-        Content-Security-Policy = "default-src 'self' mandelbrot.cyberhd1811.de; style-src-elem 'self' fonts.googleapis.com"
+        Content-Security-Policy = "default-src 'self' mandelbrot.cyberhd1811.de; font-src 'self' fonts.googleapis.com"
