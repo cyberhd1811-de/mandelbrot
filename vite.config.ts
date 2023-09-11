@@ -30,7 +30,7 @@ export default defineConfig({
                 lang: 'en',
                 name: 'Mandelbrot',
                 short_name: 'Mandelbrot',
-                start_url: '/*',
+                start_url: '/mandelbrot',
                 theme_color: '#f0f5f0',
             },
             registerType: 'autoUpdate',
