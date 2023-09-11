@@ -1,7 +1,19 @@
 {
     "short_name": "Mandelbrot",
     "name": "Autoplaner",
-    "icons": [],
+    "icons": [
+        {
+            "src": "img/logo_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/logo_512_maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
     "start_url": "*",
     "display": "standalone",
     "theme_color": "#f0f5f0",
