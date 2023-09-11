@@ -6,6 +6,10 @@ import App from './App';
 
 import './styles/index.scss';
 
+if ('serviceWorker' in navigator) {
+    await navigator.serviceWorker.register('/sw.js');
+}
+
 render(
     () => (
         <Router>

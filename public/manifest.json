@@ -1,0 +1,23 @@
+{
+    "background_color": "#0f0c0c",
+    "description": "A simple viewer of the mandelbrot set.",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "img/logo_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/logo_512_maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "lang": "en",
+    "name": "Mandelbrot",
+    "short_name": "Mandelbrot",
+    "start_url": "/mandelbrot",
+    "theme_color": "#f0f5f0"
+}
