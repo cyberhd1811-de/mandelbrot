@@ -5,5 +5,5 @@
 
 [[redirects]]
     from = "/*"
-    to = "/"
+    to = "/mandelbrot"
     status = 200

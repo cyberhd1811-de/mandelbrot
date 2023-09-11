@@ -1,5 +1,5 @@
 import { createEffect, createSignal, type Component } from 'solid-js';
-import { Route, Routes } from '@solidjs/router';
+import { A, Route, Routes } from '@solidjs/router';
 
 import { Footer, Header, Mandelbrot, NotFound, Settings } from './Content';
 import { SettingsProvider } from './Context';
@@ -21,6 +21,10 @@ const App: Component = () => {
             <Header />
             <Routes>
                 <Route path='/' component={Mandelbrot} />
+                <Route
+                    path='/mandelbrot'
+                    element={<script>{(location.pathname = '/')}</script>}
+                />
                 <Route path='/settings' component={Settings} />
                 <Route path='*' component={NotFound} />
             </Routes>
