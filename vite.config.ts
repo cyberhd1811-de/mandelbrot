@@ -6,7 +6,9 @@ export default defineConfig({
     plugins: [
         solidPlugin(),
         VitePWA({
-            
+            devOptions: {
+                enabled: true,
+            },
             injectRegister: 'auto',
             manifest: {
                 background_color: '#0f0c0c',
