@@ -1,6 +1,6 @@
 {
     "name": "mandelbrot",
-    "version": "2.4.2",
+    "version": "2.4.3",
     "description": "A simple website showing the 'mandelbrot set' with some small features.",
     "author": {
         "name": "CyberHD1811",
