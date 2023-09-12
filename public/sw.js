@@ -1,12 +1,9 @@
-const CACHE = '2.4.3';
+const CACHE = '2.4.4';
 const FILES = [
     'index.html',
     'offline.html',
     './assets/index.js',
     './assets/index.css',
-    './img/favicon.ico',
-    './img/logo_512_maskable.png',
-    './img/logo_512.png',
 ];
 
 self.addEventListener('install', function (event) {
@@ -25,7 +22,7 @@ self.addEventListener('fetch', function (event) {
                 return fetch(event.request);
             })
             .catch(function () {
-                return caches.match('offline.html');
+                return caches.match('index.html');
             })
     );
 });
